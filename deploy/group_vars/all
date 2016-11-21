@@ -1,11 +1,11 @@
 ---
 site:
-  domain: sample.com
+  domain: learn-zapier.way2cu.com
   # subdomain: test
   # alias: domain.com
   root: httpdocs
-  username: sample
-  caracal_branch: master
+  username: zapier
+  caracal_branch: release
   # ip_address: 0.0.0.0
   # owner: Some Person
   # plan: Unlimited
