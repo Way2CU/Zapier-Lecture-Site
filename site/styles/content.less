@@ -36,9 +36,10 @@ header h1 span {
 	height: 70px;
 }
 
-header a.contact {
+header a {
 	display: inline-block;
 	text-decoration: none;
+	margin: 0 1em;
 	padding: 1em 2em;
 	line-height: 100%;
 	background-color: @color_orange;
@@ -47,8 +48,16 @@ header a.contact {
 	transition: all 0.3s;
 }
 
-header a.contact:hover {
+header a.file {
+	background-color: @color_blue;
+}
+
+header a:hover {
 	background-color: lighten(@color_orange, 10%);
+}
+
+header a.file:hover {
+	background-color: lighten(@color_blue, 10%);
 }
 
 header div {

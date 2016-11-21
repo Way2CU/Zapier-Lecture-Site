@@ -1,0 +1,22 @@
+Creating Users - Linux commands
+1.sudo adduser <name>
+2.whoami - Checks to see which user is currently on.
+3.su <name> - Switches between users
+4.chmod - Command for changing file or directory permission
+5.chown - Command for changing owner of a file or directory
+6.which - Coomand for showing where a program is located.
+
+Installing software
+1.Download the source file - curl -o URL (Download the file at the url)
+2.Untar file - tar -xvf FILENAME
+3.Run ./configure script
+4.Run make command
+5.Run sudo make install
+
+Linux Package Manager Commands
+1.apt-get update Update your package catalog on your computer
+2.apt-cache search PATTERN Search the available packages for a pattern
+3.apt-get install PACKAGE Install one or more packages
+4.apt-get upgrade Upgrade to the latest version of all the packages installed
+5.apt-get remove PACKAGE Remove or uninstall package from your computer
+

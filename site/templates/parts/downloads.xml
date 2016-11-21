@@ -1,0 +1,10 @@
+<document>
+	<a
+		class="file"
+		href="$params['url']"
+		target="_blank"
+		cms:eval="href"
+		>
+		<cms:var param="name" multilanguage="yes"/>
+	</a>
+</document>
