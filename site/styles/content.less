@@ -301,3 +301,21 @@ footer div.copyright {
 footer div.copyright a {
 	color: @color_header_text;
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	ul#features {
+		padding: 0px calc(~'(100vw - 960px)' / 2);
+	}
+
+	ul#features > li {
+		min-height: 380px;
+	}
+
+	ul#features ul {
+		padding-left: 150px;
+	}
+
+	div#form_wrap form label input {
+		width: 170px;
+	}
+}
