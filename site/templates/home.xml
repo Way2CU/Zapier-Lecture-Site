@@ -12,12 +12,23 @@
 			<header>
 				<h1><cms:text constant="main_title"/></h1>
 
-				<a
-					class="contact"
-					href="javascript:void(0)"
-					>
-					<cms:text constant="button_contact"/>
-				</a>
+				<cms:desktop>
+					<a
+						class="contact"
+						href="javascript:void(0)"
+						>
+						<cms:text constant="button_contact"/>
+					</a>
+				</cms:desktop>
+
+				<cms:mobile>
+					<a
+						class="contact"
+						href="#form_wrap"
+						>
+						<cms:text constant="button_contact"/>
+					</a>
+				</cms:mobile>
 
 				<cms:module
 						name="downloads"
@@ -25,7 +36,20 @@
 						template="parts/downloads.xml"
 						/>
 
-				<div>
+				<cms:desktop>
+					<div>
+						<img
+							src="_BASEURL.'/site/images/eyal.jpg'"
+							alt="eyal-gershon"
+							cms:eval="src"
+							/>
+						<p><cms:text constant="about_eyal"/></p>
+					</div>
+				</cms:desktop>
+			</header>
+
+			<cms:mobile>
+				<div class="about">
 					<img
 						src="_BASEURL.'/site/images/eyal.jpg'"
 						alt="eyal-gershon"
@@ -33,7 +57,7 @@
 						/>
 					<p><cms:text constant="about_eyal"/></p>
 				</div>
-			</header>
+			</cms:mobile>
 
 			<ul id="features">
 				<cms:module
@@ -56,13 +80,15 @@
 					/>
 			</div>
 
-			<div class="floating_form">
-				<cms:module
-					name="contact_form"
-					action="show"
-					text_id="contact"
-					/>
-			</div>
+			<cms:desktop>
+				<div class="floating_form">
+					<cms:module
+						name="contact_form"
+						action="show"
+						text_id="contact"
+						/>
+				</div>
+			</cms:desktop>
 		</body>
 	</html>
 </document>

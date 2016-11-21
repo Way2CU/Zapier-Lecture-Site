@@ -52,24 +52,26 @@ Site.on_load = function() {
 	if (Site.is_mobile())
 		Site.mobile_menu = new Caracal.MobileMenu();
 
-	// create dialog for showing contact form
-	Site.floating_form = new Dialog();
-	Site.floating_form
-		.setContentFromDOM('div.floating_form')
-		.setSize(600, 300)
-		.setTitle(language_handler.getText(null, 'form_title'));
+	if(!Site.is_mobile()) {
+		// create dialog for showing contact form
+		Site.floating_form = new Dialog();
+		Site.floating_form
+			.setContentFromDOM('div.floating_form')
+			.setSize(600, 300)
+			.setTitle(language_handler.getText(null, 'form_title'));
 
-	// create handler for submitting dialog form
-	Caracal.ContactForm.list[1].events.connect('submit-success', function(event) {
-		Site.floating_form.hide();
-		return true;
-	});
+		// create handler for submitting dialog form
+		Caracal.ContactForm.list[1].events.connect('submit-success', function(event) {
+			Site.floating_form.hide();
+			return true;
+		});
 
-	// click handle for showing dialog
-	var button_dialog = document.querySelector('a.contact');
-	button_dialog.addEventListener('click', function() {
-		Site.floating_form.show();
-	});
+		// click handle for showing dialog
+		var button_dialog = document.querySelector('a.contact');
+		button_dialog.addEventListener('click', function() {
+			Site.floating_form.show();
+		});
+	}
 };
 
 
