@@ -9,6 +9,7 @@
 	<module name="captcha" order="0" preload="no"/>
 	<module name="articles" order="5" preload="no"/>
 	<module name="contact_form" order="6" preload="no"/>
+	<module name="downloads" order="7" preload="no"/>
 
 	<user
 		fullname="Administrator"

@@ -9,19 +9,17 @@
 header {
 	display: block;
 	text-align: center;
-
+	padding: 3.5em 0em;
 	background-image: url(../images/mobile_header.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: 100% auto;
 	color: white;
-	min-height: 100vw;
 }
 
 header h1 {
 	margin: 0;
 	font-size: 2em;
-	padding: 0.5em 0em;
 }
 
 header h1 span {
@@ -237,4 +235,19 @@ div.dialog div.title {
 div.dialog div.command_bar,
 div.dialog div.inner_content {
 	background-color: lighten(@color_grey, 10%);
+}
+
+footer {
+	text-align: center;
+	background-color: @color_text;
+	border-top: 1px solid fade(@color_header_text, 30%);
+}
+
+footer div.copyright {
+	display: inline-block;
+	color: @color_header_text;
+}
+
+footer div.copyright a {
+	color: @color_header_text;
 }

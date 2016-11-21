@@ -89,6 +89,15 @@
 						/>
 				</div>
 			</cms:desktop>
+
+			<footer>
+				<!-- copyright -->
+				<cms:template file="stock/copyright.xml">
+					<param name="holder" value="copyright_holder"/>
+					<param name="text" value="copyright_text"/>
+					<param name="light" value="1"/>
+				</cms:template>
+			</footer>
 		</body>
 	</html>
 </document>
