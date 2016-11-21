@@ -5,3 +5,275 @@
  * Copyright (c) 2016. by Way2CU, http://way2cu.com
  * Authors:Tal Reznic
  */
+
+header {
+	display: block;
+	text-align: center;
+
+	background-image: url(../images/desktop_header.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 1920px 540px;
+	color: white;
+	min-height: 540px;
+}
+
+header h1 {
+	margin: 0;
+	font-size: 3em;
+	padding: 0.5em 0em;
+}
+
+header h1 span {
+	display: inline-block;
+	vertical-align: bottom;
+	font-size: 0;
+	background-image: url(../images/logo.svg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 170px 70px;
+	width: 170px;
+	height: 70px;
+}
+
+header a.contact {
+	display: inline-block;
+	text-decoration: none;
+	padding: 1em 2em;
+	line-height: 100%;
+	background-color: @color_orange;
+	color: @color_header_text;
+	font-weight: 700;
+	transition: all 0.3s;
+}
+
+header a.contact:hover {
+	background-color: lighten(@color_orange, 10%);
+}
+
+header div {
+	display: block;
+	text-align: right;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	background-color: fade(black, 20%);
+	border: 1px solid @color_header_text;
+	width: 780px;
+}
+
+header div img {
+	display: inline-block;
+	vertical-align: middle;
+	border-left: 1px solid @color_header_text;
+	width: 100px;
+}
+
+header div p {
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	padding: 0em 2em;
+	width: calc(~'100% - 101px');
+}
+
+header div p strong {
+	display: block;
+}
+
+ul#features {
+	display: block;
+	margin: 0;
+	margin-top: -130px;
+	margin-bottom: 2em;
+	padding: 0 calc(~'(100% - 1200px)' / 2);
+}
+
+ul#features > li {
+	display: inline-block;
+	vertical-align: top;
+	background-color: lighten(@color_grey, 10%);
+	box-shadow: 0px 0px 10px fade(@color_text, 30%);
+	min-height: 300px;
+	width: 48%;
+}
+
+ul#features > li:first-of-type {
+	background-image: url(../images/graphic2.svg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 195px 157px;
+}
+
+ul#features > li:last-of-type {
+	background-image: url(../images/graphic1.svg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 188px 215px;
+}
+
+ul#features > li:last-of-type {
+	margin-right: 4%;
+}
+
+ul#features > li h4 {
+	margin: 0;
+	padding: 0.5em;
+	background-color: @color_blue;
+	color: @color_header_text;
+}
+
+ul#features > li p {
+	padding-right: 1em;
+	padding-left: 200px;
+}
+
+ul#features ul  {
+	margin: 0;
+	padding-right: 2em;
+	list-style-type: disc;
+}
+
+div.floating_form,
+div#form_wrap {
+	display: block;
+	text-align: center;
+	padding: 1em calc(~'(100% - 1200px)' / 2);
+	background-color: @color_text;
+	color: @color_header_text;
+	position: relative;
+	overflow: hidden;
+}
+
+div.floating_form {
+	padding: 1em;
+	background-color: transparent;
+}
+
+div#form_wrap h4 {
+	display: block;
+	padding-right: 10%;
+	text-align: right;
+	margin-top: 0;
+}
+
+div#form_wrap span.sign-up {
+	position: absolute;
+	padding: 1em 0em;
+	top: 0;
+	left: 0%;
+	text-align: right;
+	background-color: @color_blue;
+	width: 45%;
+	z-index: 1;
+}
+
+div#form_wrap span.sign-up:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 105%;
+	height: 100%;
+	background-color: @color_blue;
+	transform: skew(-40deg);
+	z-index: -1;
+}
+
+div.floating_form form label,
+div#form_wrap form label {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0em 0.5em;
+	position: relative;
+}
+
+div.floating_form form label {
+	display: block;
+	margin-bottom: 1.5em;
+}
+
+div.floating_form form label span,
+div#form_wrap form label span {
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	padding: 0em 0.5em;
+}
+
+div.floating_form form label span {
+	width: 60px;
+	text-align: right;
+	color: @color_text;
+}
+
+div.floating_form form label input,
+div#form_wrap form label input {
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	background-color: transparent;
+	border: 1px solid @color_header_text;
+	padding: 0.7em 0.2em;
+	width: 220px;
+	color: @color_text;
+	transition: all 0.3s;
+}
+
+div.floating_form form label input {
+	width: calc(~'100% - 60px');
+	border-color: @color_text;
+}
+
+div#form_wrap form label input:hover {
+	background-color: fade(@color_header_text, 50%);
+}
+
+div#floating_form form label input:focus,
+div.floating_form form label input:hover {
+	border-color: @color_blue;
+}
+
+div#form_wrap form label input:focus {
+	background-color: @color_header_text;
+}
+
+div#form_wrap form div.controls {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+div.floating_form form div.controls {
+	display: block;
+	text-align: center;
+}
+
+div.floating_form form div.controls button,
+div#form_wrap form div.controls button {
+	display: block;
+	padding: 0.7em 3em;
+	border: 1px solid transparent;
+	background-color: @color_orange;
+	color: @color_header_text;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+
+div.floating_form form div.controls button {
+	display: inline-block;
+}
+
+div.floating_form form div.controls button:hover,
+div#form_wrap form div.controls button:hover {
+	background-color: lighten(@color_orange, 10%);
+}
+
+div.dialog div.title {
+	text-align: center;
+	background-color: @color_blue;
+}
+
+div.dialog div.command_bar,
+div.dialog div.inner_content {
+	background-color: lighten(@color_grey, 10%);
+}

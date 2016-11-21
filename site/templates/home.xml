@@ -9,7 +9,52 @@
 		</head>
 
 		<body>
-			<h1>It works!</h1>
+			<header>
+				<h1><cms:text constant="main_title"/></h1>
+				<a
+					class="contact"
+					href="javascript:void(0)"
+					>
+					<cms:text constant="button_contact"/>
+				</a>
+				<div>
+					<img
+						src="_BASEURL.'/site/images/eyal.jpg'"
+						alt="eyal-gershon"
+						cms:eval="src"
+						/>
+					<p><cms:text constant="about_eyal"/></p>
+				</div>
+			</header>
+
+			<ul id="features">
+				<cms:module
+					name="articles"
+					action="show_list"
+					group="features"
+					template="stock/features_generic.xml"
+					>
+					<param name="title" value=""/>
+				</cms:module>
+			</ul>
+
+			<div id="form_wrap">
+				<h4><cms:text constant="form_title"/></h4>
+				<span class="sign-up"><cms:text constant="sign-up"/></span>
+				<cms:module
+					name="contact_form"
+					action="show"
+					text_id="contact"
+					/>
+			</div>
+
+			<div class="floating_form">
+				<cms:module
+					name="contact_form"
+					action="show"
+					text_id="contact"
+					/>
+			</div>
 		</body>
 	</html>
 </document>
