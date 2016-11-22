@@ -49,8 +49,15 @@ Site.is_mobile = function() {
  * Function called when document and images have been completely loaded.
  */
 Site.on_load = function() {
-	if (Site.is_mobile())
+	if (Site.is_mobile()) {
 		Site.mobile_menu = new Caracal.MobileMenu();
+		Caracal.ContactForm.list[0].events.connect('submit-success', function(data) {
+			dataLayer.push({
+				event: "leadSent"
+			});
+			return true;
+		});
+	}
 
 	if(!Site.is_mobile()) {
 		// create dialog for showing contact form
@@ -59,6 +66,13 @@ Site.on_load = function() {
 			.setContentFromDOM('div.floating_form')
 			.setSize(600, 300)
 			.setTitle(language_handler.getText(null, 'form_title'));
+
+		Caracal.ContactForm.list[0].events.connect('submit-success', function(data) {
+			dataLayer.push({
+				event: "leadSent"
+			});
+			return true;
+		});
 
 		// create handler for submitting dialog form
 		Caracal.ContactForm.list[1].events.connect('submit-success', function(event) {
@@ -72,20 +86,6 @@ Site.on_load = function() {
 			Site.floating_form.show();
 		});
 	}
-
-	Caracal.ContactForm.list[0].events.connect('submit-success', function(data) {
-		dataLayer.push({
-			event: "leadSent"
-		});
-		return true;
-	});
-
-	Caracal.ContactForm.list[1].events.connect('submit-success', function(data) {
-		dataLayer.push({
-			event: "leadSent"
-		});
-		return true;
-	});
 };
 
 
