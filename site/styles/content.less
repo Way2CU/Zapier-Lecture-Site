@@ -221,8 +221,8 @@ div#form_wrap form label input {
 	display: inline-block;
 	vertical-align: middle;
 	box-sizing: border-box;
-	background-color: transparent;
-	border: 1px solid @color_header_text;
+	background-color: @color_header_text;
+	border: 2px solid @color_header_text;
 	padding: 0.7em 0.2em;
 	width: 220px;
 	color: @color_text;
@@ -235,7 +235,7 @@ div.floating_form form label input {
 }
 
 div#form_wrap form label input:hover {
-	background-color: fade(@color_header_text, 50%);
+	border-color: fade(@color_blue, 70%);
 }
 
 div#floating_form form label input:focus,
