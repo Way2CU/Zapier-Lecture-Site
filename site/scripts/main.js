@@ -45,6 +45,23 @@ Site.is_mobile = function() {
 	return result;
 };
 
+
+Site.handle_scroll = function(event) {
+	var scroll = window.scrollY;
+
+	if(scroll > Site.scroll_trigger_position && Site.enabled == true) {
+		Site.body_element.classList.add('fixed');
+		Site.body_element.style.paddingTop = Site.fixed_position_form_height + 'px';
+		Site.enabled = false;
+	}
+
+	if(scroll < Site.scroll_trigger_position && Site.enabled == false) {
+		Site.body_element.classList.remove('fixed');
+		Site.body_element.style.paddingTop = '0px';
+		Site.enabled = true;
+	}
+}
+
 /**
  * Function called when document and images have been completely loaded.
  */
@@ -81,10 +98,21 @@ Site.on_load = function() {
 		});
 
 		// click handle for showing dialog
-		var button_dialog = document.querySelector('a.contact');
-		button_dialog.addEventListener('click', function() {
-			Site.floating_form.show();
-		});
+		var dialog_buttons = document.querySelectorAll('a.contact');
+		for(var i = 0; i < dialog_buttons.length; i++) {
+			dialog_buttons[i].addEventListener('click', function() {
+				Site.floating_form.show();
+			})
+		}
+
+		Site.body_element = document.querySelector('body');
+		Site.fixed_position_form = document.querySelector('div#form_wrap');
+		Site.fixed_position_form_height = Site.fixed_position_form.clientHeight;
+		console.log(Site.fixed_position_form_height);
+		Site.scroll_trigger_position = Site.fixed_position_form.offsetTop;
+		Site.enabled = true;
+		Site.handle_scroll();
+		window.addEventListener('scroll', Site.handle_scroll);
 	}
 };
 

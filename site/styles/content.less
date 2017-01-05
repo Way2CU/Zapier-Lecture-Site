@@ -129,6 +129,16 @@ div#form_wrap {
 	color: @color_header_text;
 	position: relative;
 	overflow: hidden;
+	transition: all 0.3s;
+}
+
+body.fixed div#form_wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100000;
+	transition: all 0.3s;
 }
 
 div.floating_form {
