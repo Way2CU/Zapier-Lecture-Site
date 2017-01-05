@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../units/schema/language.dtd">
 <document>
-	<cms:var name="_DOCTYPE"/>
 	<html lang="$language" dir="$language_rtl ? 'rtl' : 'ltr'" cms:eval="lang,dir">
 		<head>
 			<title><cms:text constant="site_title"/></title>
@@ -38,6 +37,13 @@
 						template="parts/downloads.xml"
 						/>
 
+				<cms:module
+					name="articles"
+					action="show"
+					text_id="scheduale"
+					template="stock/article_generic.xml"
+					/>
+
 				<cms:desktop>
 					<div>
 						<img
@@ -61,17 +67,6 @@
 				</div>
 			</cms:mobile>
 
-			<ul id="features">
-				<cms:module
-					name="articles"
-					action="show_list"
-					group="features"
-					template="stock/features_generic.xml"
-					>
-					<param name="title" value=""/>
-				</cms:module>
-			</ul>
-
 			<div id="form_wrap">
 				<h4><cms:text constant="form_title"/></h4>
 				<span class="sign-up"><cms:text constant="sign-up"/></span>
@@ -92,7 +87,62 @@
 				</div>
 			</cms:desktop>
 
+			<section>
+				<ul id="features">
+					<cms:module
+						name="articles"
+						action="show_list"
+						group="features"
+						template="stock/features_generic.xml"
+						>
+						<param name="title" value=""/>
+					</cms:module>
+				</ul>
+				<div class="testimonial">
+					<cms:module
+						name="gallery"
+						action="show_group"
+						group="testimonial"
+						template="parts/gallery_group_title.xml"
+						/>
+					<ul>
+						<cms:module
+							name="gallery"
+							action="show_image_list"
+							group="testimonial"
+							template="parts/testimonials.xml"
+							/>
+					</ul>
+				</div>
+			</section>
+
 			<footer>
+				<div class="footer">
+					<cms:module
+						name="articles"
+						action="show"
+						text_id="scheduale"
+						template="stock/article_generic.xml"
+						/>
+					<h2><cms:text constant="footer_title"/></h2>
+					<cms:desktop>
+						<a
+							class="contact"
+							href="javascript:void(0)"
+							>
+							<cms:text constant="button_contact"/>
+						</a>
+					</cms:desktop>
+
+					<cms:mobile>
+						<a
+							class="contact"
+							href="#form_wrap"
+							>
+							<cms:text constant="button_contact"/>
+						</a>
+					</cms:mobile>
+				</div>
 				<!-- copyright -->
 				<cms:template file="stock/copyright.xml">
 					<param name="holder" value="copyright_holder"/>

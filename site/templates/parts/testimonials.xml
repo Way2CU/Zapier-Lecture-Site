@@ -1,0 +1,10 @@
+<document>
+	<li>
+		<img
+			src="gallery::getThumbnailById($params['id'], null, 100,Thumbnail::CONSTRAIN_BOTH)"
+			alt="$params['title'][$language]"
+			cms:eval="src,alt"
+			/>
+		<cms:markdown param="description" multilanguage="yes"/>
+	</li>
+</document>

@@ -9,21 +9,23 @@
 header {
 	display: block;
 	text-align: center;
+	padding: 2em 0em;
 
 	background-image: url(../images/desktop_header.jpg);
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: 1920px 540px;
 	color: white;
-	min-height: 540px;
 }
 
+footer div.footer h2,
 header h1 {
 	margin: 0;
 	font-size: 3em;
-	padding: 0.5em 0em;
+	margin-bottom: 0.5em;
 }
 
+footer div.footer span,
 header h1 span {
 	display: inline-block;
 	vertical-align: bottom;
@@ -36,6 +38,13 @@ header h1 span {
 	height: 70px;
 }
 
+footer div.footer span {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+footer div.footer a,
 header a {
 	display: inline-block;
 	text-decoration: none;
@@ -52,6 +61,7 @@ header a.file {
 	background-color: @color_blue;
 }
 
+footer div.footer a:hover,
 header a:hover {
 	background-color: lighten(@color_orange, 10%);
 }
@@ -60,12 +70,32 @@ header a.file:hover {
 	background-color: lighten(@color_blue, 10%);
 }
 
+footer article,
+header article {
+	display: block;
+	margin: 1.5em auto;
+	padding: 1em 1.5em;
+	background-color: fade(black, 20%);
+	border: 1px solid @color_header_text;
+	border-radius: 15px;
+	width: 500px;
+}
+
+footer article {
+	margin: 2em auto;
+}
+
+footer article p,
+header article p {
+	margin: 0;
+	font-size: 1.8em;
+}
+
 header div {
 	display: block;
 	text-align: right;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 2em;
 	background-color: fade(black, 20%);
 	border: 1px solid @color_header_text;
 	width: 780px;
@@ -88,59 +118,6 @@ header div p {
 
 header div p strong {
 	display: block;
-}
-
-ul#features {
-	display: block;
-	margin: 0;
-	margin-top: -130px;
-	margin-bottom: 3em;
-	padding: 0 calc(~'(100% - 1200px)' / 2);
-}
-
-ul#features > li {
-	display: inline-block;
-	vertical-align: top;
-	background-color: lighten(@color_grey, 10%);
-	box-shadow: 0px 0px 10px fade(@color_text, 30%);
-	min-height: 300px;
-	width: 48%;
-}
-
-ul#features > li:first-of-type {
-	background-image: url(../images/graphic2.svg);
-	background-repeat: no-repeat;
-	background-position: left bottom;
-	background-size: 195px 157px;
-}
-
-ul#features > li:last-of-type {
-	background-image: url(../images/graphic1.svg);
-	background-repeat: no-repeat;
-	background-position: left bottom;
-	background-size: 188px 215px;
-}
-
-ul#features > li:last-of-type {
-	margin-right: 4%;
-}
-
-ul#features > li h4 {
-	margin: 0;
-	padding: 0.5em;
-	background-color: @color_blue;
-	color: @color_header_text;
-}
-
-ul#features > li p {
-	padding-right: 1em;
-	padding-left: 200px;
-}
-
-ul#features ul  {
-	margin: 0;
-	padding-right: 2em;
-	list-style-type: disc;
 }
 
 div.floating_form,
@@ -287,10 +264,118 @@ div.dialog div.inner_content {
 	background-color: lighten(@color_grey, 10%);
 }
 
+section {
+	padding: 2em calc(~'(100% - 1200px)' / 2);
+}
+
+ul#features {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+ul#features > li {
+	display: inline-block;
+	vertical-align: top;
+	background-color: lighten(@color_grey, 10%);
+	min-height: 300px;
+	width: 48%;
+}
+
+ul#features > li:first-of-type {
+	background-image: url(../images/graphic2.svg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 195px 157px;
+}
+
+ul#features > li:last-of-type {
+	background-image: url(../images/graphic1.svg);
+	background-repeat: no-repeat;
+	background-position: left bottom;
+	background-size: 188px 215px;
+}
+
+ul#features > li:last-of-type {
+	margin-right: 4%;
+}
+
+ul#features > li h4 {
+	margin: 0;
+	padding: 0.5em;
+	background-color: @color_blue;
+	color: @color_header_text;
+}
+
+ul#features > li p {
+	padding-right: 1em;
+	padding-left: 200px;
+}
+
+ul#features ul  {
+	margin: 0;
+	padding-right: 2em;
+	list-style-type: disc;
+}
+
+section div.testimonial {
+	margin-top: 2em;
+	background-color: lighten(@color_grey, 10%);
+	text-align: center;
+}
+
+section div.testimonial h4 {
+	margin: 0;
+	padding: 0.5em;
+	background-color: @color_blue;
+	color: @color_header_text;
+}
+
+div.testimonial ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+div.testimonial ul li {
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	padding: 1em 1em;
+	width: 33.3%;
+}
+
+div.testimonial ul li img {
+	border-radius: 50%;
+}
+
+div.testimonial ul li strong {
+	display: block;
+}
+
+div.testimonial ul li p {
+	margin: 0;
+	padding: 0.5em 2em 0em 2em;
+}
+
+div.testimonial ul li p:first-of-type {
+	padding: 0.5em 0em;
+	border-bottom: 1px solid @color_blue;
+}
+
 footer {
 	text-align: center;
 	background-color: @color_text;
 	border-top: 1px solid fade(@color_header_text, 30%);
+	color: @color_header_text;
+}
+
+footer div.footer {
+	background-image: url(../images/footer-background.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 1920px 500px;
+	min-height: 500px;
 }
 
 footer div.copyright {
