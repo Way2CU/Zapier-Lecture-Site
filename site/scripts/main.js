@@ -108,7 +108,7 @@ Site.on_load = function() {
 		Site.body_element = document.querySelector('body');
 		Site.fixed_position_form = document.querySelector('div#form_wrap');
 		Site.fixed_position_form_height = Site.fixed_position_form.clientHeight;
-		Site.scroll_trigger_position = Site.fixed_position_form.offsetTop - 50;
+		Site.scroll_trigger_position = Site.fixed_position_form.offsetTop;
 		Site.enabled = true;
 		Site.handle_scroll();
 		window.addEventListener('scroll', Site.handle_scroll);
