@@ -1,0 +1,8 @@
+---
+- name: Domain backup before changes
+  command: "{{ plesk_backup }}
+      domains-name '{{ site.domain }}'
+      --description='Backup before deployment.'
+      --incremental"
+  args:
+    chdir: "{{ plesk_command_directory }}"
